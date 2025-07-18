@@ -3,22 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const dotenv = require('dotenv');
 
-// Cargar dotenv desde baul.env
-const envPath = path.join(__dirname, 'baul.env');
-console.log('🛠 Verificando si baul.env existe en:', envPath);
-
-if (!fs.existsSync(envPath)) {
-  console.log('⛔ No se encontró el archivo baul.env');
-  process.exit(1);
-}
-
-const result = dotenv.config({ path: envPath });
-if (result.error) {
-  console.log('⛔ Error al cargar baul.env:', result.error);
-  process.exit(1);
-}
-
-console.log('✅ dotenv cargado desde baul.env');
+console.log('✅ Variables de entorno cargadas desde Render');
 console.log('🔑 process.env.PORT:', process.env.PORT);
 console.log('🔑 process.env.API_TOKEN:', process.env.API_TOKEN);
 
