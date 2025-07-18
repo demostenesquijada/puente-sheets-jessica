@@ -1,0 +1,20 @@
+{
+  "name": "sheets-backend-jessica",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Demóstenes Quijada",
+  "license": "MIT",
+  "description": "Backend de integración con Google Sheets para Jessica Sommer",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "googleapis": "^152.0.0",
+    "minimist": "^1.2.8"
+  }
+}

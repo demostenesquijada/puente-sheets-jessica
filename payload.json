@@ -1,0 +1,27 @@
+{
+  "comandos": [
+    {
+      "accion": "leerEncabezado",
+      "hoja": "Pendientes"
+    },
+    {
+      "accion": "leerFilas",
+      "hoja": "Pendientes"
+    },
+    {
+      "accion": "buscarCelda",
+      "hoja": "Pendientes",
+      "args": { "valor": "Fellowship NED" }
+    },
+    {
+      "accion": "llenarCelda",
+      "hoja": "Pendientes",
+      "args": { "celda": "H8", "valor": "✅ completado vía puente" }
+    },
+    {
+      "accion": "borrarFila",
+      "hoja": "Pendientes",
+      "args": { "fila": 2 }
+    }
+  ]
+}
