@@ -1,10 +1,18 @@
 import fetch from 'node-fetch'; 
 
-const PUENTE_URL = 'https://puente-sheets-jessica.onrender.com';
+const PUENTE_URL = 'https://puente-sheets-jessica.onrender.com/puente';
 
 // Función genérica para enviar requests al puente
 export async function enviarAccionAlPuente(accion, hoja, parametros) {
-  const payload = { accion, hoja, parametros };
+  const payload = {
+    comandos: [
+      {
+        accion,
+        hoja,
+        args: parametros
+      }
+    ]
+  };
 
   try {
     const respuesta = await fetch(PUENTE_URL, {
