@@ -17,11 +17,23 @@ export async function enviarAccionAlPuente(accion, hoja, parametros) {
   try {
     const respuesta = await fetch(PUENTE_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json; charset=utf-8',
+        'Accept': 'application/json'
+      },
       body: JSON.stringify(payload)
     });
 
-    const data = await respuesta.json();
+    const rawText = await respuesta.text();
+    console.log('📜 Respuesta cruda del puente:', rawText);
+
+    let data;
+    try {
+      data = JSON.parse(rawText);
+    } catch (parseErr) {
+      console.error('⚠️ No se pudo parsear JSON:', parseErr.message);
+      return null;
+    }
 
     if (data.status === 'ok') {
       console.log('✅ Acción ejecutada con éxito:', data.data);
