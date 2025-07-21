@@ -78,12 +78,14 @@ async function pruebaIntegralFunciones() {
   const filasLeidas = await enviarAccionAlPuente('leerFilas', 'Pendientes', {});
   console.log('Filas:', filasLeidas ? 'Leídas correctamente' : 'Error');
 
-  const filaPorIndice = await enviarAccionAlPuente('leerFila', 'Pendientes', { index: 1 });
+  const filaPorIndice = await enviarAccionAlPuente('leerFila', 'Pendientes', { indexFila: 1 });
   console.log('leerFila por índice 1:', filaPorIndice);
 
-  const filasPorCondicion = await enviarAccionAlPuente('buscarFilasPorCondiciones', 'Pendientes', [
-    { campo: 'EJE', valor: 'Democracy Innovation Lab' }
-  ]);
+  const filasPorCondicion = await enviarAccionAlPuente('buscarFilasPorCondiciones', 'Pendientes', {
+    condiciones: [
+      { campo: 'EJE', valor: 'Democracy Innovation Lab' }
+    ]
+  });
   console.log('Filas por condición EJE=Democracy Innovation Lab:', filasPorCondicion);
 
   // BLOQUE 3 – COLUMNAS
