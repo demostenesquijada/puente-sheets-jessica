@@ -1,0 +1,45 @@
+openapi: 3.0.1
+info:
+  title: Puente Sheets Jessica API
+  description: API para que Jessica Sommer interactúe con Google Sheets.
+  version: 1.0.0
+servers:
+  - url: https://puente-sheets-jessica.onrender.com
+paths:
+  /puente:
+    post:
+      summary: Ejecutar acción en Google Sheets
+      operationId: ejecutarAccionSheets
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                  example: leerCelda
+                sheet:
+                  type: string
+                  example: Pendientes
+                cell:
+                  type: string
+                  example: J2
+                conditions:
+                  type: array
+                  items:
+                    type: object
+      responses:
+        "200":
+          description: Respuesta exitosa
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  result:
+                    type: object

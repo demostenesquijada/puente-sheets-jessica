@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Puente Sheets Jessica",
+  "name_for_model": "puente_sheets_jessica",
+  "description_for_human": "Permite a Jessica Sommer leer, buscar, actualizar y borrar datos en la hoja de Pendientes en Google Sheets.",
+  "description_for_model": "Plugin para que Jessica Sommer interactúe con Google Sheets. Incluye funciones para leer celdas, filas, columnas y modificarlas.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://puente-sheets-jessica.onrender.com/.well-known/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://puente-sheets-jessica.onrender.com/logo.png",
+  "contact_email": "soporte@jessica-sommer.dev",
+  "legal_info_url": "https://puente-sheets-jessica.onrender.com/legal"
+}
