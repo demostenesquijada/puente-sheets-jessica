@@ -61,6 +61,9 @@ const Sheets = require('./sheets');
 const express = require('express');
 const app = express();
 
+// 🔹 Servir archivos estáticos de .well-known (para el plugin)
+app.use('/.well-known', express.static(path.join(__dirname, '.well-known')));
+
 // Middleware para parsear JSON
 app.use(express.json());
 
