@@ -35,11 +35,20 @@ export async function enviarAccionAlPuente(accion, hoja, parametros) {
       return null;
     }
 
-    if (data.status === 'ok') {
+    if (data.resultados && Array.isArray(data.resultados)) {
+      const primerResultado = data.resultados[0];
+      if (primerResultado.status === 'ok') {
+        console.log(`✅ Acción ${primerResultado.accion} ejecutada con éxito:`, primerResultado.salida);
+        return primerResultado.salida;
+      } else {
+        console.error(`⚠️ Error en ${primerResultado.accion}:`, primerResultado.mensaje || 'Sin mensaje');
+        return null;
+      }
+    } else if (data.status === 'ok') {
       console.log('✅ Acción ejecutada con éxito:', data.data);
       return data.data;
     } else {
-      console.error('⚠️ Error del puente:', data);
+      console.error('⚠️ Respuesta inesperada del puente:', data);
       return null;
     }
 
