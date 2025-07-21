@@ -137,3 +137,6 @@ const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Puente escuchando en http://localhost:${PORT}`);
 });
+
+// ✅ Importar el clienteJessica.js para ejecutar la prueba mínima automáticamente
+import('./clienteJessica.js');
