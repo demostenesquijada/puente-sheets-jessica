@@ -79,6 +79,13 @@ app.post('/puente', async (req, res) => {
   for (const cmd of comandos) {
     console.log('➡️ procesando comando:', cmd);
 
+    // ✅ Mapeo automático para indexFila → index
+    if (cmd.args && typeof cmd.args === 'object') {
+      if (cmd.args.indexFila !== undefined && cmd.args.index === undefined) {
+        cmd.args.index = cmd.args.indexFila;
+      }
+    }
+
     const accion = cmd.accion;
     const funcionSheets = Sheets[accion];
 
