@@ -82,7 +82,7 @@ async function pruebaIntegralFunciones() {
   const filaPorIndice = await enviarAccionAlPuente('leerFila', 'Pendientes', { index: 2 });
   console.log('leerFila por índice 2 (primera fila de datos):', filaPorIndice);
 
-  // Prueba leerFila por condición campo/valor
+  // Prueba leerFila por condición campo/valor (modo alternativo)
   const filaPorCondicion = await enviarAccionAlPuente('leerFila', 'Pendientes', {
     campo: 'ACTIVIDAD',
     valor: 'Sesión 1 Ciclo Lecciones'
