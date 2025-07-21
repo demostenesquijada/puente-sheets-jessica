@@ -28,3 +28,13 @@ export async function enviarAccionAlPuente(accion, hoja, parametros) {
     return null;
   }
 }
+
+// ✅ PRUEBA SIMPLE DEL CLIENTE
+(async () => {
+  const resultado = await enviarAccionAlPuente(
+    'leerEncabezado',
+    'Pendientes',
+    {}
+  );
+  console.log('Resultado de prueba:', resultado);
+})();
