@@ -78,8 +78,16 @@ async function pruebaIntegralFunciones() {
   const filasLeidas = await enviarAccionAlPuente('leerFilas', 'Pendientes', {});
   console.log('Filas:', filasLeidas ? 'Leídas correctamente' : 'Error');
 
-  const filaPorIndice = await enviarAccionAlPuente('leerFila', 'Pendientes', { indexFila: 1 });
-  console.log('leerFila por índice 1:', filaPorIndice);
+  // Ajuste correcto para leerFila por índice válido (2 = primera fila de datos reales)
+  const filaPorIndice = await enviarAccionAlPuente('leerFila', 'Pendientes', { index: 2 });
+  console.log('leerFila por índice 2 (primera fila de datos):', filaPorIndice);
+
+  // Prueba leerFila por condición campo/valor
+  const filaPorCondicion = await enviarAccionAlPuente('leerFila', 'Pendientes', {
+    campo: 'ACTIVIDAD',
+    valor: 'Sesión 1 Ciclo Lecciones'
+  });
+  console.log('leerFila por condición ACTIVIDAD=Sesión 1 Ciclo Lecciones:', filaPorCondicion);
 
   const filasPorCondicion = await enviarAccionAlPuente('buscarFilasPorCondiciones', 'Pendientes', {
     condiciones: [
